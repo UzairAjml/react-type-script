@@ -4,15 +4,9 @@ import { FState as Props } from "../App"
 interface FProps{
     friends:Props["friends"],
     setFriends:React.Dispatch<React.SetStateAction<Props["friends"]>>
-    inputFriends:any; 
-}
-
-
-
-
+    inputFriends:any; }
 const AddToList: React.FC<FProps> = ({friends,setFriends,inputFriends}) => {
-
-    const [input,setInput]=useState({
+ const [input,setInput]=useState({
         id:"",
         name:"",
         age:"",
@@ -20,20 +14,16 @@ const AddToList: React.FC<FProps> = ({friends,setFriends,inputFriends}) => {
         team:""
 
     })
-
     useEffect(() => {
         setInput(inputFriends);
         console.log('effect');
     }, [inputFriends])
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement >) :void=> {
         setInput({
             ...input,
             [e.target.name]: e.target.value
-        })
-    }
-
-    const validate=():Boolean=>{
+        })    }
+const validate=():Boolean=>{
         if(input.name==="" || input.age==="" || input.url==="" || input.team===""){
             alert("Please fill in complete data");
             return false;
@@ -42,7 +32,6 @@ const AddToList: React.FC<FProps> = ({friends,setFriends,inputFriends}) => {
         return true;
 
     }
-
     const handleClick=():void=>{
 
 
