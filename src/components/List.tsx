@@ -26,8 +26,7 @@ const List:React.FC<FProps> = ({friends,setFriends,setOutsideInput}) => {
 
 
 
-    const onEdit=(index:number)=>{
-        console.log(friends[index]);
+    const onEdit=(index:number)=>{ 
          setOutsideInput(friends[index]);
 
     }
